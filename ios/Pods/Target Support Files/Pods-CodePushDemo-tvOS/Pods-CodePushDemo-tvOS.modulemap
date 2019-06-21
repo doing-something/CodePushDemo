@@ -1,0 +1,6 @@
+framework module Pods_CodePushDemo_tvOS {
+  umbrella header "Pods-CodePushDemo-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
