@@ -23,12 +23,6 @@ const instructions = Platform.select({
 
 type Props = {};
 export class App extends Component<Props> {
-  componentDidMount() {
-    codePush.sync({
-      updateDialog: true,
-      installMode: codePush.InstallMode.IMMEDIATE
-    });
-  }
   onButtonPress() {
     codePush.sync({
       updateDialog: true,
@@ -38,7 +32,7 @@ export class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native55!</Text>
+        <Text style={styles.welcome}>Welcome to React Nativeß1!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <TouchableOpacity onPress={this.onButtonPress}>
@@ -69,4 +63,6 @@ const styles = StyleSheet.create({
   }
 });
 
-export default codePush(App);
+export default codePush({
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME
+})(App);
